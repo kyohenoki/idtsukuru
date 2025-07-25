@@ -1,11 +1,8 @@
-console.log(tsukuru(3,10))
-
-function tsukuru(text: number, nagasa: number) {
+export function tsukuru(text: number, nagasa: number) {
   const mozi = pattern(text)
   let kotae = ""
   let count = 0
   while (nagasa > count) {
-    // randomが上手くいってない
     kotae += mozi.charAt(random(0, mozi.length))
     count += 1
   }
@@ -16,14 +13,14 @@ function pattern(text: number) {
   if (text === 1) {
     return "1234567890abcdef"
   } else if (text === 2) {
-    return "1234567890abcdefghijklmnopqrstuvwxyz"
-  } else {
     return "1234567890abcdehiklmnosuvwxz"
+  } else {
+    return "1234567890abcdefghijklmnopqrstuvwxyz"
   }
 }
 
 function random(min: number, max: number) {
   const array = new Uint16Array(1)
   crypto.getRandomValues(array)
-  return (array[0] % (max - min + 1)) + min
+  return (array[0] % max) + min
 }
