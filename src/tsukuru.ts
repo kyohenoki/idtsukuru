@@ -3,7 +3,7 @@ export function tsukuru(text: number, nagasa: number) {
   let kotae = ""
   let count = 0
   while (nagasa > count) {
-    kotae += mozi.charAt(random(0, mozi.length))
+    kotae += mozi.charAt(randomore(0, mozi.length - 1))
     count += 1
   }
   return kotae
@@ -23,4 +23,18 @@ function random(min: number, max: number) {
   const array = new Uint16Array(1)
   crypto.getRandomValues(array)
   return (array[0] % max) + min
+}
+
+function randomore(min: number, max: number): number {
+  const range = max - min + 1
+  const maxValid = 65536 - (65536 % range)
+  const array = new Uint16Array(1)
+  let randomNumber: number
+
+  do {
+    crypto.getRandomValues(array)
+    randomNumber = array[0]
+  } while (randomNumber >= maxValid)
+
+  return (randomNumber % range) + min
 }

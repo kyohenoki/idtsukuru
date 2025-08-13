@@ -1,0 +1,30 @@
+{
+  "name": "idtsukuru",
+  "version": "0.1.0",
+  "description": "kakkoii id tsukuru",
+  "author": "kyohenoki",
+  "license": "MIT",
+  "homepage": "https://github.com/kyohenoki/idtsukuru#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyohenoki/idtsukuru"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "idtsukuru": "dist/tests.js"
+  },
+  "scripts": {
+    "build:index": "bun build src/index.ts --outdir dist --target node --format esm",
+    "build:tests": "bun build src/tests.ts --outdir dist --target node --format esm",
+    "type": "tsc",
+    "build": "bun run build:index && bun run build:tests && bun run type",
+    "tsukuru": "bun run dist/tests.js",
+    "test": "bun run tests/good.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.20",
+    "typescript": "^5.9.2"
+  }
+}

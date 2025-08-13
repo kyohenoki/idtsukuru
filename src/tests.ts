@@ -1,6 +1,8 @@
+#!/usr/bin/env bun
+
 import { tsukuru } from "./tsukuru"
 
-const kaitou = question("kaitou (1/2)", 1, 2)
+const kaitou = question("kaitou (1/2)", 2, 2)
 const mozi = question("mozi (1/2/3)", 2, 3)
 const nagasa = question("nagasa", 10, Infinity)
 const kaisuu = question("kaisuu", 10, Infinity)
