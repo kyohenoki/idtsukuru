@@ -1,24 +1,15 @@
 # idtsukuru
 
-一応 npm パッケージとしてインストールできます
+GitHub CLI 等でリポジトリをクローンしてください
 
 ```
-pnpm add idtsukuru
+gh repo clone kyohenoki/idtsukuru
 ```
 
-**使う方法**
+Bun をインストールのうえ、以下のコマンドを打って、質問に答えてください
 
 ```
-import { tsukuru } from "idtsukuru"
-
-// 24文字のランダムな英数字の文字列を生成する
-console.log(tsukuru(2, 24))
-```
-
-もしくは、Bun をインストールのうえ、以下のコマンドを打って、質問に答えてください
-
-```
-bunx idtsukuru
+bun tests.ts
 ```
 
 **質問内容**
