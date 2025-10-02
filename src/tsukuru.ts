@@ -1,3 +1,43 @@
+export function tsukuru({ mozi, nagasa }: Komoku): string {
+  const tsukau = pattern(mozi)
+  let kotae = ''
+  let count = 0
+  while (nagasa > count) {
+    kotae += tsukau.charAt(randomore(0, tsukau.length - 1))
+    count += 1
+  }
+  return kotae
+}
+
+export type Komoku = {
+  mozi: '16' | 'osusume' | 'all'
+  nagasa: number
+}
+
+function pattern(mozi: Komoku['mozi']) {
+  if (mozi === '16') {
+    return '1234567890abcdef'
+  } else if (mozi === 'osusume') {
+    return '1234567890abcdehiklmnosuvwxz'
+  } else {
+    return '1234567890abcdefghijklmnopqrstuvwxyz'
+  }
+}
+
+function randomore(min: number, max: number): number {
+  const range = max - min + 1
+  const maxValid = 65536 - (65536 % range)
+  const array = new Uint16Array(1)
+  let randomNumber: number
+  do {
+    crypto.getRandomValues(array)
+    randomNumber = array[0]
+  } while (randomNumber >= maxValid)
+  return (randomNumber % range) + min
+}
+
+/*
+
 export function tsukuru(text: number, nagasa: number) {
   const mozi = pattern(text)
   let kotae = ''
@@ -25,16 +65,4 @@ function random(min: number, max: number) {
   return (array[0] % max) + min
 }
 
-function randomore(min: number, max: number): number {
-  const range = max - min + 1
-  const maxValid = 65536 - (65536 % range)
-  const array = new Uint16Array(1)
-  let randomNumber: number
-
-  do {
-    crypto.getRandomValues(array)
-    randomNumber = array[0]
-  } while (randomNumber >= maxValid)
-
-  return (randomNumber % range) + min
-}
+*/

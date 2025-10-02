@@ -12,15 +12,24 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "bun run src/main.ts",
-    "tsdown": "tsdown",
-    "check": "biome check --write"
+    "dev": "bun run src/cmd.ts",
+    "build": "tsdown",
+    "check": "biome check --write",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
     "@types/bun": "^1.2.23",
+    "@types/prompts": "^2.4.9",
     "tsdown": "^0.15.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   }
 }

@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 import { tsukuru } from './tsukuru'
 
 const kaitou = question('kaitou (1/2)', 2, 2)
