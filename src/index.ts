@@ -1,1 +1,1 @@
-export { tsukuru } from "./tsukuru"
+export { tsukuru } from './tsukuru'

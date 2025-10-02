@@ -1,6 +1,6 @@
 export function tsukuru(text: number, nagasa: number) {
   const mozi = pattern(text)
-  let kotae = ""
+  let kotae = ''
   let count = 0
   while (nagasa > count) {
     kotae += mozi.charAt(randomore(0, mozi.length - 1))
@@ -11,11 +11,11 @@ export function tsukuru(text: number, nagasa: number) {
 
 function pattern(text: number) {
   if (text === 1) {
-    return "1234567890abcdef"
+    return '1234567890abcdef'
   } else if (text === 2) {
-    return "1234567890abcdehiklmnosuvwxz"
+    return '1234567890abcdehiklmnosuvwxz'
   } else {
-    return "1234567890abcdefghijklmnopqrstuvwxyz"
+    return '1234567890abcdefghijklmnopqrstuvwxyz'
   }
 }
 

@@ -1,30 +1,26 @@
 {
   "name": "idtsukuru",
-  "version": "0.1.0",
-  "description": "kakkoii id tsukuru",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "generator",
   "author": "kyohenoki",
   "license": "MIT",
-  "homepage": "https://github.com/kyohenoki/idtsukuru#readme",
+  "homepage": "https://github.com/kyohenoki/idtsukuru",
   "repository": {
     "type": "git",
     "url": "https://github.com/kyohenoki/idtsukuru"
   },
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": {
-    "idtsukuru": "dist/tests.js"
-  },
   "scripts": {
-    "build:index": "bun build src/index.ts --outdir dist --target node --format esm",
-    "build:tests": "bun build src/tests.ts --outdir dist --target node --format esm",
-    "type": "tsc",
-    "build": "bun run build:index && bun run build:tests && bun run type",
-    "tsukuru": "bun run dist/tests.js",
-    "test": "bun run tests/good.ts"
+    "dev": "bun run src/main.ts",
+    "tsdown": "tsdown",
+    "check": "biome check --write"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.20",
-    "typescript": "^5.9.2"
+    "@biomejs/biome": "2.2.5",
+    "@types/bun": "^1.2.23",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3"
   }
 }
