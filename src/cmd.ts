@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import prompts from 'prompts'
 import { tsukuru } from './tsukuru'
 

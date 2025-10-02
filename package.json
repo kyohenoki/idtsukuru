@@ -10,8 +10,14 @@
     "type": "git",
     "url": "https://github.com/kyohenoki/idtsukuru"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "bin": {
+    "idtsukuru": "./dist/cmd.js"
+  },
   "files": [
     "dist"
   ],
@@ -19,7 +25,8 @@
     "dev": "bun run src/cmd.ts",
     "build": "tsdown",
     "check": "biome check --write",
-    "test": "vitest"
+    "test": "vitest",
+    "alpha": "tsdown && npm publish --tag alpha"
   },
   "dependencies": {
     "prompts": "^2.4.2"

@@ -4,6 +4,7 @@ export default defineConfig([
   {
     entry: 'src/cmd.ts',
     platform: 'node',
+    dts: false,
     minify: true,
   },
   {
